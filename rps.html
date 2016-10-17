@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RPS</title>
+</head>
+<body>
+
+
+  <button id="start-game">Start</button>
+
+<script type="text/javascript">
+// User must select input rocks, paper or scissors
+
+
+document.getElementById("start-game").onclick = runProgram;
+
+function runProgram() {
+
+  var userSelection = getUserChoice();
+  var computerSelection = getComputerChoice();
+  var winner = getWinner(computerSelection, userSelection);
+  alert("Winner is " + winner);
+
+  function getUserChoice() {
+    var userChoice = prompt('Please enter Rock, Paper, or Scissors.');
+    return userChoice;
+  }
+
+  function getComputerChoice() {
+    var choices = ['Rock', 'Paper', 'Scissors'];
+    var computerChoice = choices[ Math.floor(Math.random() * choices.length) ];
+    return computerChoice;
+  }
+
+  function getWinner(computer, user) {
+    if (computer === user) {
+      return "Tie";
+    } else if ( (computer === 'Rock' && user === 'Scissors') || (computer === "Paper" && user === 'Rock') || (computer === "Scissors" && user === "Paper") ) {
+      return "user";
+    } else {
+      return "computer";
+    }
+  }
+
+  function playTournament() {
+    var userScore = 0;
+    var computerScore = 0;
+
+    while (userScore < 3 && computerScore < 3) {
+
+      var gameWinner = runProgram();
+      if (gameWinner === "Computer") {
+        computerScore++;
+      } else if (gameWinner === "User") {
+        userScore++;
+      }
+    }
+
+    if (userScore > computerScore) {
+      alert("User won game. Score: Computer: " + computerScore + " User:" + userScore);
+    } else {
+      alert("Computer won game. Score: Computer: " + computerScore + " User:" + userScore);
+    }
+  }
+}
+
+
+
+
+
+// computer must generate a random selection of rocks, paper or scissors
+// compare user input to computer input to decide winner
+// alert who won
+
+// if user input is scissors and computer input is scissors - tie
+// if user input is rocks and computer input is scissors OR if user input is paper and computer input is rock - user wins
+// if user input is paper and computer input is scissors - user loses
+
+// rocks > scissors
+// scissors > paper
+// paper > rocks
+
+// prompt to ask for a choice
+// alert to tell them information
+// alert('hi');
+
+</script>
+</body>
+</html>
