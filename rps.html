@@ -23,14 +23,6 @@ function runProgram() {
 
   function getUserChoice() {
     var userChoice = prompt('Please enter Rock, Paper, or Scissors.');
-    var rock = ['Rock', 'rock', 'Rocks', 'rocks'];
-    var paper = ['Paper', 'paper', 'Papers', 'papers'];
-    var scissors = ['Scissor', 'scissor', 'Scissors', 'scissors'];
-    console.log(userChoice);
-    if (userChoice == "" || null) {
-      alert('Please make a selection.')
-    } else if (userChoice != 'Rock' || 'Rocks' || 'rock' || 'rocks' || 'Paper' || 'paper' || 'Papers' || 'papers' || 'Scissor' || 'Scissors' || 'scissor' || 'scissors') {
-      alert('This is an invalid selection.')
     }
     return userChoice;
   }
@@ -84,14 +76,6 @@ function runProgram() {
 // if user input is scissors and computer input is scissors - tie
 // if user input is rocks and computer input is scissors OR if user input is paper and computer input is rock - user wins
 // if user input is paper and computer input is scissors - user loses
-
-// rocks > scissors
-// scissors > paper
-// paper > rocks
-
-// prompt to ask for a choice
-// alert to tell them information
-// alert('hi');
 
 </script>
 </body>
