@@ -23,6 +23,16 @@ function runProgram() {
 
   function getUserChoice() {
     var userChoice = prompt('Please enter Rock, Paper, or Scissors.');
+    correctAnswers = ['Rock', 'Rocks', 'rock', 'rocks', 'Paper', 'paper', 'Papers', 'papers', 'Scissor', 'Scissors', 'scissor', 'scissors'];
+
+    if (userChoice == "" || undefined || null) {
+      alert('Please make a selection.');
+      getUserChoice();
+    } else if ( correctAnswers.includes(userChoice) ) {
+      alert(userChoice + ', nice!');
+    } else {
+      alert('This is not a valid selection');
+      getUserChoice();
     }
     return userChoice;
   }
