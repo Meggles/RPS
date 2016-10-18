@@ -34,12 +34,12 @@ function runProgram() {
       alert('This is not a valid selection');
       getUserChoice();
     }
-    return userChoice;
   }
 
   function getComputerChoice() {
     var choices = ['Rock', 'Paper', 'Scissors'];
     var computerChoice = choices[ Math.floor(Math.random() * choices.length) ];
+    alert('Computer answer is ' + computerChoice);
     return computerChoice;
   }
 
